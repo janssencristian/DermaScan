@@ -1,12 +1,16 @@
-import gradio as gr
-import numpy as np
-import tensorflow as tf
-from tensorflow.keras.preprocessing import image as keras_image
-from PIL import Image
 import cv2
+import tensorflow as tf
+import numpy as np
+import gradio as gr
+from PIL import Image
+from tensorflow.keras.preprocessing.image import img_to_array
+import efficientnet.tfkeras as efn
 
-# Carregando o modelo treinado
-model = tf.keras.models.load_model("dermascan_model.keras")
+# Carregando o modelo treinadomodel = tf.keras.models.load_model(
+model = tf.keras.models.load_model(
+    "dermascan_model.keras",
+    custom_objects={"EfficientNetB3": efn.EfficientNetB3}
+)
 
 # Classes da base
 class_names = ['bkl', 'mel', 'nv',]
@@ -34,7 +38,7 @@ def make_gradcam_heatmap(img_array, model, last_conv_layer_name, pred_index=None
 # Função principal
 def predict_with_explainability(pil_img):
     img = pil_img.resize((300, 300))
-    img_array = keras_image.img_to_array(img) / 255.0
+    img_array = img_to_array(img) / 255.0
     img_array_exp = np.expand_dims(img_array, axis=0)
 
     preds = model.predict(img_array_exp)
@@ -67,3 +71,5 @@ interface = gr.Interface(
 )
 
 interface.launch()
+
+#ceratose benigna (BKL), nevo melanocítico (NV), melanoma (MEL).

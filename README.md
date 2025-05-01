@@ -14,11 +14,13 @@ Este projeto utiliza **Visão Computacional** e **Redes Neurais Convolucionais (
 ```bash
 git clone https://github.com/janssencristian/dermascan.git
 cd dermascan
-
+```
 2. Instale as dependências:
+```bash
 pip install -r requirements.txt
-
-3. Execute o app:
+```
+4. Execute o app:
+```bash
 python app.py
 ```
 

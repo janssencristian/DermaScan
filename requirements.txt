@@ -1,0 +1,9 @@
+gradio
+tensorflow
+opencv-python
+numpy
+pillow
+scikit-learn
+matplotlib
+seaborn
+efficientnet

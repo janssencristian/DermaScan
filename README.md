@@ -20,6 +20,7 @@ pip install -r requirements.txt
 
 3. Execute o app:
 python app.py
+```
 
 ## 💾 Modelo
 O arquivo dermascan_model.kegas pode ser baixado manualmente ou via link alternativo (ex: Google Drive, Hugging Face Hub).

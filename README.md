@@ -25,5 +25,5 @@ python app.py
 ## 💾 Modelo
 O arquivo dermascan_model.kegas pode ser baixado manualmente ou via link alternativo (ex: Google Drive, Hugging Face Hub).
 
-🧠 Dataset
+## 🧠 Dataset
 Utiliza o Dataset HAM10000 – Skin Lesion Dataset: https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000
